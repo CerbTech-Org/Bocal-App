@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1028920996733",
+    "project_id": "bocalapp-24339",
+    "storage_bucket": "bocalapp-24339.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1028920996733:android:45c0a12d257777919a1214",
+        "android_client_info": {
+          "package_name": "com.example.bocal_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDq7FOJEYfS4ttsJuHaoxz0rCbo_Ppjz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

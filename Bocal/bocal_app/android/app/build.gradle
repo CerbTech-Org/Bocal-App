@@ -1,0 +1,56 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    // Le plugin Flutter doit être appliqué après les plugins Android et Kotlin
+    id "dev.flutter.flutter-gradle-plugin"
+    id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace = "com.example.bocal_app"
+    compileSdkVersion 34  // Mettre à jour la version du SDK
+
+    // Si NDK n'est pas utilisé, cette ligne peut être supprimée
+    ndkVersion = "21.3.6528147"
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    defaultConfig {
+        applicationId "com.example.bocal_app"
+        minSdkVersion 23
+        targetSdkVersion 34  // Mettre à jour également la version cible
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug  // Utiliser debug pour le moment, à remplacer en production
+        }
+    }
+
+    viewBinding {
+        enabled = true  // Activer le view binding
+    }
+}
+
+flutter {
+    source = "../.."
+}
+
+dependencies {
+    // Utilisation du BOM (Bill of Materials) pour gérer les versions des bibliothèques Firebase
+    implementation platform('com.google.firebase:firebase-bom:33.4.0')
+    implementation "com.google.firebase:firebase-auth"
+}
+
+// Plugins à appliquer (déjà définis au début, donc pas besoin de les répéter ici)
+apply plugin: 'com.google.gms.google-services'
